@@ -1,5 +1,13 @@
 \documentclass[a4paper]{article}
 
+
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
+\addbibresource{main.bib}
+
 \usepackage{fontspec}
 \setmainfont{Libertinus Serif}
 \usepackage[
@@ -29,7 +37,9 @@ AAA
 BBB
 \today
 
-aaa
+aaa \cite{einstein}
 
 \[\frac{1}{2} \]
+
+\printbibliography
 \end{document}

@@ -15,7 +15,9 @@
           inherit (pkgs.texlive)
             scheme-basic latex-bin latexmk fontspec
             # Math
-            lualatex-math unicode-math;
+            lualatex-math unicode-math
+            # Bib
+            biblatex biber;
         };
       in {
         packages = {
@@ -35,7 +37,7 @@
               env TEXMFHOME=.cache TEXMFVAR=.cache/texmf-var \
                 SOURCE_DATE_EPOCH=$(date -d "2025-04-30" +%s) \
                 OSFONTDIR=${pkgs.libertinus}/share/fonts \
-                latexmk -interaction=nonstopmode -pdf -lualatex \
+                latexmk -interaction=nonstopmode -pdf -lualatex -bibtex \
                 -pretex="\pdfvariable suppressoptionalinfo 512\relax" \
                 -usepretex document.tex
             '';
