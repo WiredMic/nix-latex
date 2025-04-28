@@ -12,7 +12,10 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-basic latex-bin latexmk fontspec;
+          inherit (pkgs.texlive)
+            scheme-basic latex-bin latexmk fontspec
+            # Math
+            lualatex-math unicode-math;
         };
       in {
         packages = {

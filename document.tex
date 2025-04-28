@@ -2,6 +2,24 @@
 
 \usepackage{fontspec}
 \setmainfont{Libertinus Serif}
+\usepackage[
+math-style=ISO,
+bold-style=ISO,
+mathrm=sym,
+mathup=sym,
+mathit=sym,
+mathsf=sym,
+mathbf=sym,
+mathtt=sym,
+]{unicode-math}
+
+\setmathfont{Libertinus Math}
+% [ % for math symbols, can be any other OpenType math font
+% 	Path = \subfix{setup/fonts/Libertinus/static/OTF/},
+% 	Scale=1,
+% 	% Ligatures=TeX,
+% 	Extension = .otf,
+% ]
 
 \begin{document}
 Hello, World!
@@ -12,4 +30,6 @@ BBB
 \today
 
 aaa
+
+\[\frac{1}{2} \]
 \end{document}
