@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{report}
 
 
 \usepackage[
@@ -27,19 +27,27 @@ mathtt=sym,
 % 	Scale=1,
 % 	% Ligatures=TeX,
 % 	Extension = .otf,
-% ]
+%  ]
+
+\usepackage{subfiles} % Best loaded last in the preamble
 
 \begin{document}
+\chapter{Main Document}
 Hello, World!
 
-AAA
+This is the main document file.
 
-BBB
-\today
+\section{Citation Example}
+Here's a citation to Einstein's paper: \cite{einstein}
 
-aaa \cite{einstein}
-
+\section{Math Example}
 \[\frac{1}{2} \]
+
+\chapter{Subfiles}
+Now including content from subfiles:
+
+\subfile{./chapters/bivector/bivector.tex}
+% Add more subfiles as needed
 
 \printbibliography
 \end{document}
